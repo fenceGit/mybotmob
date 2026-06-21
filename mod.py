@@ -11,7 +11,7 @@ from datetime import timedelta
 async def mute(interaction: discord.Interaction, member: discord.Member, duration: int):
   timedelta(minutes=duration)
   if member.top_role >= interaction.user.top_role:
-    await interaction.response.send_message(f"YOU REALLY THINK YOU CAN MUTE {member.mention}")
+    await interaction.response.send_message(f"They have higher or equal role means you can't mute{member.mention}")
     return
   await interaction.response.defer()
   timeout = discord.utils.utcnow() + timedelta(minutes=duration)
