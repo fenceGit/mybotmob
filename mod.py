@@ -10,7 +10,7 @@ from datetime import timedelta
 @app_commands.describe(member="member to mute")
 async def mute(interaction: discord.Interaction, member: discord.Member, duration: int):
   timedelta(minutes=duration)
-  if member.guild_permissions.moderate_members:
+  if member.top_role >= interaction.user.top_role:
     await interaction.response.send_message(f"YOU REALLY THINK YOU CAN MUTE {member.mention}")
     return
   await interaction.response.defer()
