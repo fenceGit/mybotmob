@@ -33,6 +33,7 @@ async def on_message(message):
         await message.delete()
         await message.channel.send("Mind your language! cussing is bad >:(")
 return
+
     await bot.process_commands(message)
 
 bot.run(os.getenv("TOKEN"))
