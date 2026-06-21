@@ -32,8 +32,8 @@ async def on_message(message):
     if any(word in message.content.lower() for word in badwords):
         await message.delete()
         await message.channel.send("Mind your language! cussing is bad >:("
-)
-return
+        )
+        return
 
     await bot.process_commands(message)
 
